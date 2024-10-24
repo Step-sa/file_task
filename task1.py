@@ -1,3 +1,7 @@
+def cool_print(d: dict):
+    for key in d.keys():
+        print(key, d[key])
+        
 if __name__ == "__main__":
     file = open('C:/Users/user/Desktop/files/recipes.txt', encoding="UTF-8")
     recipes = dict()
