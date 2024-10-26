@@ -1,9 +1,8 @@
 def cool_print(d: dict):
     for key in d.keys():
         print(key, d[key])
-        
-if __name__ == "__main__":
-    file = open('C:/Users/user/Desktop/files/recipes.txt', encoding="UTF-8")
+
+def get_cook_book(file):
     recipes = dict()
     flag = True
     for row in file:
@@ -22,5 +21,10 @@ if __name__ == "__main__":
         t['quantity'] = split_row[1]
         t['measure'] = split_row[2][:-1]
         recipes[current_food].append(t)
-    file.close()
-    print(recipes)
+    return recipes
+
+
+if __name__ == "__main__":
+    file = open('C:/Users/user/Desktop/files/recipes.txt', encoding="UTF-8")
+    my_cook_book = get_cook_book(file)
+    cool_print(my_cook_book)
